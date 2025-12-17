@@ -1,0 +1,30 @@
+spring:
+  data:
+    redis:
+      url: redis://localhost:6379
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+  
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      batch-size: 16384
+      linger: 5ms
+      buffer-memory: 33554432
+    consumer:
+      group-id: kuber-dev
+      auto-offset-reset: earliest
+  
+  cache:
+    type: redis
+
+logging:
+  level:
+    com.kuber: DEBUG
+    org.springframework.data.redis: WARN
+    org.springframework.boot.autoconfigure.security: WARN
+    org.hibernate.engine.transaction.jta.platform: WARN

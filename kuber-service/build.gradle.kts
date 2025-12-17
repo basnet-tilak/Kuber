@@ -10,12 +10,17 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation(project(":kuber-common"))
+    implementation(project(":kuber-repository"))
     implementation(project(":kuber-domain"))
-    api("org.springframework.boot:spring-boot-starter-security")
+    implementation(project(":kuber-common"))
+    implementation(project(":kuber-security"))
     api("org.springframework.boot:spring-boot-starter-webflux")
-    api("org.springframework.boot:spring-boot-starter-data-jpa")
+    api("org.springframework.boot:spring-boot-starter-security")
+    api("org.springframework.boot:spring-boot-starter-data-redis:4.0.0")
+    api("org.springframework.kafka:spring-kafka:4.0.1")
     api("io.jsonwebtoken:jjwt-api:0.13.0")
+    api("com.fasterxml.jackson.core:jackson-databind")
+    testImplementation("io.projectreactor:reactor-test")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.13.0")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.13.0")
     compileOnly("org.projectlombok:lombok:1.18.42")

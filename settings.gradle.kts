@@ -1,8 +1,16 @@
 @file:Suppress("UnstableApiUsage")
 
-
 rootProject.name = "Kuber"
-include(":app", ":kuber-core","user-services","kuber-web","kuber-security")
+
+include(
+    "kuber-common",
+    "kuber-domain",
+    "kuber-repository",
+    "kuber-service",
+    "kuber-security",
+    "kuber-api",
+    "kuber-app"
+)
 
 pluginManagement {
     repositories {
