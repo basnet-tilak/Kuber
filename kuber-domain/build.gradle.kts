@@ -11,9 +11,6 @@ dependencyManagement {
 
 dependencies {
     implementation(project(":kuber-common"))
-    implementation(project(":kuber-domain"))
-    api("org.springframework.boot:spring-boot-starter-security")
-    api("org.springframework.boot:spring-boot-starter-webflux")
     api("org.springframework.boot:spring-boot-starter-data-jpa")
     compileOnly("org.projectlombok:lombok:1.18.42")
     annotationProcessor("org.projectlombok:lombok:1.18.42")

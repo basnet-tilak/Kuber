@@ -5,6 +5,13 @@ plugins {
     `java-library`
 }
 
+allprojects {
+    group = "com.kuber"
+    version = "0.0.1-SNAPSHOT"
+    repositories {
+        mavenCentral()
+    }
+}
 subprojects {
     repositories {
         mavenCentral()
@@ -12,7 +19,17 @@ subprojects {
     }
 }
 
-allprojects {
-    group = "com.kuber"
-    version = "0.0.1-SNAPSHOT"
+subprojects {
+    apply(plugin = "java")
+    apply(plugin = "io.spring.dependency-management")
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(25))
+        }
+    }
+
+    tasks.test {
+        useJUnitPlatform()
+    }
 }

@@ -1,0 +1,21 @@
+spring:
+  cache:
+    type: none
+  
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+
+management:
+  health:
+    redis:
+      enabled: false
+
+logging:
+  level:
+    com.kuber: DEBUG
+    org.springframework.data.redis: WARN
+    org.springframework.boot.autoconfigure.security: WARN
+    org.hibernate.engine.transaction.jta.platform: WARN
